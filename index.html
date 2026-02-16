@@ -28,15 +28,17 @@
     <!-- hero section start -->
     <section
       id="hero"
-      class="relative w-full min-h-dvh bg-[url(./assets/images/banner_image.png)] bg-cover bg-center bg-no-repeat overflow-hidden"
+      class="relative w-full min-h-dvh bg-[url(./assets/images/banner_image.png)] bg-fixed bg-cover bg-center bg-no-repeat overflow-hidden"
     >
       <div
         class="absolute w-full h-full bg-gradient-to-r from-gray-900/90 via-gray-900/70 via 40% to-gray-900/20"
       >
         <!-- header -->
-        <header class="w-full bg-white border-b border-gray-100 md:py-4">
+        <header
+          class="w-full fixed top-0 left-0 z-10 bg-white border-b border-gray-100 md:py-4"
+        >
           <nav
-            class="max-w-[1140px] mx-auto p-4 flex items-center justify-between"
+            class="max-w-[1440px] mx-auto p-4 flex items-center justify-between"
           >
             <!-- logo -->
             <div class="">
@@ -104,7 +106,7 @@
         <!-- header -->
 
         <!-- hero -->
-        <div class="max-w-[1140px] w-full h-full mx-auto p-4 flex items-center">
+        <div class="max-w-[1440px] w-full h-full mx-auto p-4 flex items-center">
           <div class="space-y-4 text-white">
             <h1 class="text-6xl font-medium">Best Collection For You</h1>
             <p
@@ -128,8 +130,8 @@
     <!-- hero section end -->
 
     <!-- why chosse us section start -->
-    <section id="why_choose_us" class="w-full">
-      <div class="max-w-[1140px] mx-auto p-4 py-20">
+    <section id="why_choose_us" class="w-full bg-[#F9FAFB]">
+      <div class="max-w-[1440px] mx-auto p-4 py-20">
         <!-- heading -->
         <div class="text-center space-y-4">
           <h1 class="text-gray-900 text-3xl font-bold">Why Choose Us</h1>
@@ -141,16 +143,34 @@
         <!-- feature section on why choose us -->
         <div
           id="why_choose_us_card_container"
-          class="mt-16 p-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+          class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
         >
-          <!-- single card -->
-          <!-- exicuted by javascript -->
+          <!-- single card exicuted by javascript -->
         </div>
       </div>
     </section>
     <!-- why chosse us section end -->
 
+    <!-- trending now section start -->
+    <section id="trending now" class="w-full py-20">
+      <!-- full div -->
+      <div class="max-w-[1440px] mx-auto p-4">
+        <h1 class="text-gray-900 text-3xl font-semibold">Trending Now</h1>
+
+        <!-- trending items -->
+        <div
+          id="trending_card_container"
+          class="mt-10 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          <!-- single cards -->
+        </div>
+      </div>
+    </section>
+    <!-- trending now section end -->
+
     <!-- connect javascript files -->
     <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/components/why_choose_us.js"></script>
+    <script src="./assets/js/components/trending_now.js"></script>
   </body>
 </html>
