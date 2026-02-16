@@ -15,6 +15,11 @@ button {
   transition: all 0.3s ease;
 }
 
+img {
+  user-select: none;
+  pointer-events: none;
+}
+
 body {
   width: 100%;
   position: relative;
