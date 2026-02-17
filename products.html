@@ -25,148 +25,109 @@
     />
   </head>
   <body>
-    <!-- hero section start -->
-    <section
-      id="hero"
-      class="relative w-full min-h-dvh bg-[url(./assets/images/banner_image.png)] bg-fixed bg-cover bg-center bg-no-repeat overflow-hidden"
+    <!-- header -->
+    <header
+      class="w-full sticky top-0 left-0 z-10 bg-white border-b border-gray-100 md:py-4"
     >
-      <div
-        class="absolute w-full h-full bg-gradient-to-r from-gray-900/90 via-gray-900/70 via 40% to-gray-900/20"
-      >
-        <!-- header -->
-        <header
-          class="w-full fixed top-0 left-0 z-10 bg-white border-b border-gray-100 md:py-4"
-        >
-          <nav
-            class="max-w-[1440px] mx-auto p-4 flex items-center justify-between"
+      <nav class="max-w-[1440px] mx-auto p-4 flex items-center justify-between">
+        <!-- logo -->
+        <div class="">
+          <a href="/index.html" class="text-2xl text-indigo-600 font-normal"
+            >SwiftCart</a
           >
-            <!-- logo -->
-            <div class="">
-              <a href="/index.html" class="text-2xl text-indigo-600 font-normal"
-                >SwiftCart</a
+        </div>
+
+        <!-- nav items -->
+        <div class="hidden md:block">
+          <ul class="flex items-center gap-10">
+            <li>
+              <a
+                class="text-gray-600 text-sm font-medium hover:text-indigo-600"
+                href="/index.html"
+                >Home</a
               >
-            </div>
+            </li>
 
-            <!-- nav items -->
-            <div class="hidden md:block">
-              <ul class="flex items-center gap-10">
-                <li>
-                  <a
-                    class="text-gray-600 text-sm font-medium hover:text-indigo-600 active_link"
-                    href="/index.html"
-                    >Home</a
-                  >
-                </li>
-
-                <li>
-                  <a
-                    class="text-gray-600 text-sm font-medium hover:text-indigo-600"
-                    href="./products.html"
-                    >Products</a
-                  >
-                </li>
-
-                <li>
-                  <a
-                    class="text-gray-600 text-sm font-medium hover:text-indigo-600"
-                    href="#"
-                    >About</a
-                  >
-                </li>
-
-                <li>
-                  <a
-                    class="text-gray-600 text-sm font-medium hover:text-indigo-600"
-                    href="#"
-                    >Contact</a
-                  >
-                </li>
-              </ul>
-            </div>
-
-            <!-- cart icon -->
-            <div class="flex items-center gap-4">
-              <div class="">
-                <span class="cursor-pointer text-gray-700 text-xl">
-                  <i class="ri-shopping-cart-line"></i>
-                </span>
-              </div>
-
-              <!-- mobile hamburger -->
-              <div
-                class="size-10 bg-indigo-600 grid md:hidden place-content-center rounded-full cursor-pointer"
+            <li>
+              <a
+                class="text-gray-600 text-sm font-medium hover:text-indigo-600 active_link"
+                href="#"
+                >Products</a
               >
-                <span class="">
-                  <i class="ri-menu-3-line text-xl text-white"></i>
-                </span>
-              </div>
-            </div>
-          </nav>
-        </header>
-        <!-- header -->
+            </li>
 
-        <!-- hero -->
-        <div class="max-w-[1440px] w-full h-full mx-auto p-4 flex items-center">
-          <div class="space-y-4 text-white">
-            <h1 class="text-6xl font-medium">Best Collection For You</h1>
-            <p
-              class="text-gray-200 text-lg font-normal md:max-w-[500px] w-full"
-            >
-              Discover the latest trends in fashion, electronics, and more. Shop
-              with confidence and style at SwiftCart.
-            </p>
-            <div class="">
-              <button
-                class="px-8 py-4 text-base font-light bg-indigo-600 rounded-xl hover:bg-indigo-800"
+            <li>
+              <a
+                class="text-gray-600 text-sm font-medium hover:text-indigo-600"
+                href="#"
+                >About</a
               >
-                Shop Now
-              </button>
-            </div>
+            </li>
+
+            <li>
+              <a
+                class="text-gray-600 text-sm font-medium hover:text-indigo-600"
+                href="#"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- cart icon -->
+        <div class="flex items-center gap-4">
+          <div class="">
+            <span class="cursor-pointer text-gray-700 text-xl">
+              <i class="ri-shopping-cart-line"></i>
+            </span>
+          </div>
+
+          <!-- mobile hamburger -->
+          <div
+            class="size-10 bg-indigo-600 grid md:hidden place-content-center rounded-full cursor-pointer"
+          >
+            <span class="">
+              <i class="ri-menu-3-line text-xl text-white"></i>
+            </span>
           </div>
         </div>
-        <!-- hero -->
-      </div>
-    </section>
-    <!-- hero section end -->
+      </nav>
+    </header>
+    <!-- header -->
 
-    <!-- why chosse us section start -->
-    <section id="why_choose_us" class="w-full bg-[#F9FAFB]">
-      <div class="max-w-[1440px] mx-auto p-4 py-20">
-        <!-- heading -->
-        <div class="text-center space-y-4">
-          <h1 class="text-gray-900 text-3xl font-bold">Why Choose Us</h1>
-          <p class="text-gray-500 text-base font-normal">
-            We provide the best shopping experience with top-notch services.
-          </p>
-        </div>
-
-        <!-- feature section on why choose us -->
-        <div
-          id="why_choose_us_card_container"
-          class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
-        >
-          <!-- single card exicuted by javascript -->
-        </div>
-      </div>
-    </section>
-    <!-- why chosse us section end -->
-
-    <!-- trending now section start -->
-    <section id="trending now" class="w-full py-20">
-      <!-- full div -->
+    <!-- our products section start -->
+    <section class="w-full my-16">
       <div class="max-w-[1440px] mx-auto p-4">
-        <h1 class="text-gray-900 text-3xl font-semibold">Trending Now</h1>
+        <div class="space-y-8">
+          <!-- title and categories -->
+          <div class="text-center space-y-8">
+            <h1 class="text-gray-900 text-3xl font-semibold">Our Products</h1>
 
-        <!-- trending items -->
-        <div
-          id="trending_card_container"
-          class="mt-10 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          <!-- single cards -->
+            <div
+              id="category_buttons_container"
+              class="flex flex-wrap items-center justify-center gap-3"
+            >
+              <button
+                class="text-slate-400 text-sm font-medium px-5 py-2 bg-transparent rounded-xl border border-black/10 hover:bg-slate-100"
+              >
+                All
+              </button>
+
+              <!-- exicuted by javascript -->
+            </div>
+          </div>
+
+          <!-- products -->
+          <div
+            id="products_card_container"
+            class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+          >
+            <!-- single cards -->
+          </div>
         </div>
       </div>
     </section>
-    <!-- trending now section end -->
+    <!-- our products section end -->
 
     <!-- footer section start -->
     <footer class="w-full bg-slate-800">
@@ -372,7 +333,6 @@
     <!-- footer section end -->
 
     <!-- connect javascript files -->
-    <script src="./assets/js/components/why_choose_us.js"></script>
-    <script src="./assets/js/components/trending_now.js"></script>
+    <script src="./assets/js/app.js"></script>
   </body>
 </html>
