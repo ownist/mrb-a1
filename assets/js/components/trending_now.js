@@ -103,6 +103,7 @@ products.forEach((item) => {
         <!-- buttons div -->
         <div class="grid grid-cols-2 gap-4">
             <button
+                onclick="loadProductDetails(${item.id})"
                 class="w-full px-4 py-3.5 rounded-sm border border-gray-200 bg-transparent flex items-center justify-center gap-2.5 text-gray-700 text-sm font-medium hover:bg-gray-200"
             >
                 <span>
@@ -124,3 +125,73 @@ products.forEach((item) => {
 </div>
   `;
 });
+
+/**
+ * loadProductDetails
+ *
+ * modal
+ */
+const loadProductDetails = (id) => {
+  const url = `https://fakestoreapi.com/products/${id}`;
+
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      displayLoadProductDetails(data);
+    });
+};
+
+const displayLoadProductDetails = (product) => {
+  const modalContainer = document.getElementById("modal_container");
+
+  modalContainer.innerHTML = `
+    <div class="rounded-lg space-y-6 bg-white">
+        <!-- product image -->
+        <div class="w-full h-72 bg-gray-50 p-6 rounded-sm">
+            <img
+                class="w-full h-full object-contain"
+                src=${product.image}
+                alt="product"
+            />
+        </div>
+
+        <!-- contents -->
+        <div class="">
+            <!-- category and rating -->
+            <div class="mb-3 flex items-center justify-between">
+                <div class="">
+                    <span class="text-indigo-600 text-xs font-medium px-3 py-1 bg-indigo-50 rounded-xl"
+                        >${makeUpperCase(product.category)}</span
+                    >
+                </div>
+
+                <div class="flex items-center gap-1">
+                    <span>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                    </span>
+
+                    <span class="text-gray-900 text-sm font-semibold"> ${product.rating.rate} </span>
+
+                    <span class="text-gray-600 text-sm font-normal"> (${product.rating.count}) </span>
+                </div>
+            </div>
+
+            <!-- title and price -->
+            <div class="mb-6 space-y-2">
+                <h1 class="text-gray-900 text-base font-semibold">
+                    ${product.title}
+                </h1>
+
+                <p class="text-gray-600 text-sm font-normal">${product.description}</p>
+
+                <!-- price -->
+                <div class="">
+                    <p class="text-gray-900 text-lg font-bold">$${product.price}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  `;
+
+  document.getElementById("product_modal").showModal();
+};
