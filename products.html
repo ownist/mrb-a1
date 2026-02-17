@@ -46,11 +46,14 @@
         </div>
 
         <!-- nav items -->
-        <div class="hidden md:block">
-          <ul class="flex items-center gap-10">
+        <div
+          id="nav_container"
+          class="fixed md:static top-0 left-[-100%] w-full h-full flex items-center justify-center bg-white transition-all duration-300"
+        >
+          <ul class="flex flex-col md:flex-row items-center gap-10">
             <li>
               <a
-                class="text-gray-600 text-sm font-medium hover:text-indigo-600"
+                class="nav_links text-gray-600 text-sm font-medium hover:text-indigo-600"
                 href="/index.html"
                 >Home</a
               >
@@ -58,15 +61,15 @@
 
             <li>
               <a
-                class="text-gray-600 text-sm font-medium hover:text-indigo-600 active_link"
-                href="#"
+                class="nav_links text-gray-600 text-sm font-medium hover:text-indigo-600 active_link"
+                href="./products.html"
                 >Products</a
               >
             </li>
 
             <li>
               <a
-                class="text-gray-600 text-sm font-medium hover:text-indigo-600"
+                class="nav_links text-gray-600 text-sm font-medium hover:text-indigo-600"
                 href="#"
                 >About</a
               >
@@ -74,12 +77,19 @@
 
             <li>
               <a
-                class="text-gray-600 text-sm font-medium hover:text-indigo-600"
+                class="nav_links text-gray-600 text-sm font-medium hover:text-indigo-600"
                 href="#"
                 >Contact</a
               >
             </li>
           </ul>
+
+          <!-- close icon -->
+          <button id="close_btn" class="absolute top-8 right-8 md:hidden">
+            <span>
+              <i class="ri-close-large-line text-2xl"></i>
+            </span>
+          </button>
         </div>
 
         <!-- cart icon -->
@@ -92,6 +102,7 @@
 
           <!-- mobile hamburger -->
           <div
+            id="hamburger"
             class="size-10 bg-indigo-600 grid md:hidden place-content-center rounded-full cursor-pointer"
           >
             <span class="">
@@ -363,5 +374,6 @@
 
     <!-- connect javascript files -->
     <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/nav.js"></script>
   </body>
 </html>
