@@ -17,7 +17,7 @@ const displayCategoryButtons = (btns) => {
   btns.forEach((category) => {
     const div = document.createElement("div");
     div.innerHTML = `
-        <button class="text-slate-400 text-sm font-medium px-5 py-2 bg-transparent rounded-xl border border-black/10 hover:bg-slate-100">
+        <button id="category_btn_${category}" onclick="loadCategoryProducts(\`${category}\`)" class="text-slate-400 text-sm font-medium px-5 py-2 bg-transparent rounded-xl border border-black/10 hover:bg-slate-100 category_btn">
             ${makeUpperCase(category)}
         </button>
     `;
@@ -26,17 +26,61 @@ const displayCategoryButtons = (btns) => {
     categoryButtonsContainer.appendChild(div);
   });
 };
+
+// load by categories
+const loadCategoryProducts = (category) => {
+  manageLoading(true);
+  const url = `https://fakestoreapi.com/products/category/${category}`;
+
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      removeActiveVlassFromCategoryButton();
+      const clickedCategoryBtn = document.getElementById(
+        `category_btn_${category}`,
+      );
+      clickedCategoryBtn.classList.add("active_category");
+      displayAllProducts(data);
+    });
+};
+
+// remove all active class
+const removeActiveVlassFromCategoryButton = () => {
+  const allCategoryBtns = document.querySelectorAll(".category_btn");
+  allCategoryBtns.forEach((btn) => {
+    btn.classList.remove("active_category");
+  });
+};
+
+// loading
+const manageLoading = (status) => {
+  if (status) {
+    document.getElementById("loading_container").classList.remove("hidden");
+    document.getElementById("products_card_container").classList.add("hidden");
+  } else {
+    document.getElementById("loading_container").classList.add("hidden");
+    document
+      .getElementById("products_card_container")
+      .classList.remove("hidden");
+  }
+};
 /** --------------------------------------------------------------------- */
 
 /**
  * load and display products cards
  */
 const loadAllProducts = () => {
+  manageLoading(true);
   const url = "https://fakestoreapi.com/products";
 
   fetch(url)
     .then((res) => res.json())
-    .then((data) => displayAllProducts(data));
+    .then((data) => {
+      removeActiveVlassFromCategoryButton();
+      const allProductsBtn = document.getElementById("all_products");
+      allProductsBtn.classList.add("active_category");
+      displayAllProducts(data);
+    });
 };
 
 const displayAllProducts = (products) => {
@@ -120,6 +164,8 @@ const displayAllProducts = (products) => {
     // append
     productsCardContainer.appendChild(div);
   });
+
+  manageLoading(false);
 };
 
 // make first latter to uppercase function

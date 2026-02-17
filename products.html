@@ -23,6 +23,14 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+
+    <!-- add daisy khalar cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
     <!-- header -->
@@ -107,14 +115,23 @@
               id="category_buttons_container"
               class="flex flex-wrap items-center justify-center gap-3"
             >
-              <button
-                class="text-slate-400 text-sm font-medium px-5 py-2 bg-transparent rounded-xl border border-black/10 hover:bg-slate-100"
-              >
-                All
-              </button>
+              <div class="">
+                <button
+                  id="all_products"
+                  onclick="loadAllProducts()"
+                  class="text-slate-400 text-sm font-medium px-5 py-2 bg-transparent rounded-xl border border-black/10 hover:bg-slate-100 active_category category_btn"
+                >
+                  All
+                </button>
+              </div>
 
               <!-- exicuted by javascript -->
             </div>
+          </div>
+
+          <!-- loading section -->
+          <div id="loading_container" class="w-full text-center hidden">
+            <span class="loading loading-bars loading-xl"></span>
           </div>
 
           <!-- products -->

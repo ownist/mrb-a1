@@ -32,3 +32,9 @@ body {
   color: #4f46e5;
   font-weight: 600;
 }
+
+.active_category {
+  border: none;
+  color: white;
+  background: #6c4cff;
+}
